@@ -9,7 +9,7 @@ Plugin.create(:delete_copy) do
     :delete_copy,
     name: '削除 & コピー',
     description: 'つい消しをしてコピー。vimのヤンクみたいな!',
-    condition: Plugin::Command[:IsMyMessageAll],
+    condition: Plugin::Command[:IsMyMessageAll, :HasOneMessage],
     visible: true,
     icon: Skin.get("close.png"),
     role: :timeline
